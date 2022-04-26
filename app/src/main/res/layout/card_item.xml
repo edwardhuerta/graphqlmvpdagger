@@ -70,7 +70,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_item_description"
             tools:text="75"
-            app:drawableStartCompat="@drawable/ic_baseline_star_24" />
+            android:drawableLeft="@drawable/ic_baseline_star_24" />
 
         <TextView
             android:id="@+id/card_item_language_name"
@@ -83,7 +83,7 @@
             app:layout_constraintStart_toEndOf="@id/card_item_stargazers"
             app:layout_constraintTop_toBottomOf="@id/card_item_description"
             tools:text="Kotlin"
-            app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
+            android:drawableLeft="@drawable/ic_baseline_circle_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
