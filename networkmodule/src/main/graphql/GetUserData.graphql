@@ -1,0 +1,83 @@
+query GetUserData($login:String!){
+  user(login: $login) {
+    pinnedItems(first: 3) {
+      edges {
+        node {
+          ... on Repository {
+            id
+            name
+            description
+            stargazerCount
+            languages(first: 1) {
+              nodes {
+                id
+                name
+                color
+              }
+            }
+            owner {
+              avatarUrl
+              login
+            }
+          }
+        }
+      }
+    }
+    starredRepositories(first: 10) {
+      edges {
+        node {
+          id
+          description
+          name
+          stargazerCount
+          languages(first: 1) {
+            edges {
+              node {
+                id
+                name
+                color
+              }
+            }
+          }
+          owner {
+            avatarUrl
+            login
+          }
+        }
+      }
+    }
+    topRepositories(orderBy: {field: CREATED_AT, direction: ASC}, first: 10) {
+      edges {
+        node {
+          id
+          description
+          name
+          stargazerCount
+          languages(first: 1) {
+            edges {
+              node {
+                id
+                name
+                color
+              }
+            }
+          }
+          owner {
+            avatarUrl
+            login
+          }
+        }
+      }
+    }
+    avatarUrl
+    name
+    login
+    email
+    followers {
+      totalCount
+    }
+    following {
+      totalCount
+    }
+  }
+}

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/main_screen_swipe_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--        this holds the data for a happy flow-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main_screen_main_content_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/main_screen_title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/mainscreen_title_text"
+                        android:textAppearance="@style/ScreenTitleTextAppearance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:contentDescription="@string/content_description_avatar"
+                        android:id="@+id/main_user_avatar"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:layout_marginTop="40dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/main_screen_title_text" />
+
+                    <TextView
+                        android:id="@+id/main_user_firstlastname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:textAppearance="@style/MainUserNameTitle"
+                        app:layout_constraintStart_toEndOf="@id/main_user_avatar"
+                        app:layout_constraintTop_toTopOf="@id/main_user_avatar"
+                        tools:text="Sian Taylot" />
+
+                    <TextView
+                        android:id="@+id/main_user_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center_vertical"
+                        android:textAppearance="@style/CardItemNormalText"
+                        app:layout_constraintStart_toEndOf="@id/main_user_avatar"
+                        app:layout_constraintTop_toBottomOf="@id/main_user_firstlastname"
+                        tools:text="setaylot" />
+
+                    <TextView
+                        android:id="@+id/main_user_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:textAppearance="@style/CardItemTitleText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/main_user_avatar"
+                        tools:text="s.e.taylor@gmail.com" />
+
+                    <TextView
+                        android:id="@+id/main_user_followers_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textAppearance="@style/CardItemTitleText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/main_user_email"
+                        tools:text="48" />
+
+                    <TextView
+                        android:id="@+id/followers_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/mainscreen_followers_text"
+                        android:textAppearance="@style/CardItemNormalText"
+                        app:layout_constraintBottom_toBottomOf="@id/main_user_followers_count"
+                        app:layout_constraintStart_toEndOf="@id/main_user_followers_count" />
+
+                    <TextView
+                        android:id="@+id/main_user_following_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="16dp"
+                        android:textAppearance="@style/CardItemTitleText"
+                        app:layout_constraintStart_toEndOf="@id/followers_title"
+                        app:layout_constraintTop_toBottomOf="@id/main_user_email"
+                        tools:text="72" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/mainscreen_following_text"
+                        android:textAppearance="@style/CardItemNormalText"
+                        app:layout_constraintBottom_toBottomOf="@id/main_user_following_count"
+                        app:layout_constraintStart_toEndOf="@id/main_user_following_count" />
+
+                    <TextView
+                        android:id="@+id/pinned_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="@string/mainscreen_pinned_text"
+                        android:textAppearance="@style/RepositoryGroupNamedHeaderTextAppearance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/main_user_followers_count" />
+
+                    <TextView
+                        android:id="@+id/pinned_title_view_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mainscreen_viewall_text"
+                        android:textAppearance="@style/RepositoryGroupViewAllTextAppearance"
+                        app:layout_constraintBottom_toBottomOf="@id/pinned_title"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/pinned_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/pinned_title" />
+
+                    <TextView
+                        android:id="@+id/top_repositories_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:text="@string/top_repos_title"
+                        android:textAppearance="@style/RepositoryGroupNamedHeaderTextAppearance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/pinned_recyclerview" />
+
+                    <TextView
+                        android:id="@+id/top_repositories_title_view_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mainscreen_viewall_text"
+                        android:textAppearance="@style/RepositoryGroupViewAllTextAppearance"
+                        app:layout_constraintBottom_toBottomOf="@id/top_repositories_title"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/top_repositories_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/top_repositories_title" />
+
+                    <TextView
+                        android:id="@+id/starred_repositories_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:text="@string/starred_repos_title"
+                        android:textAppearance="@style/RepositoryGroupNamedHeaderTextAppearance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/top_repositories_recyclerview" />
+
+                    <TextView
+                        android:id="@+id/starred_repositories_title_view_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mainscreen_viewall_text"
+                        android:textAppearance="@style/RepositoryGroupViewAllTextAppearance"
+                        app:layout_constraintBottom_toBottomOf="@id/starred_repositories_title"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/starred_repositories_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/starred_repositories_title" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_screen_error_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/error_container_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/error_inlayout_message"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/error_container_retry_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/retry_button_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/error_container_message" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

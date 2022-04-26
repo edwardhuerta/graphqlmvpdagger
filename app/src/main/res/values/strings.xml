@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GithubChallenge</string>
+
+    <string name="mainscreen_title_text">Profile</string>
+    <string name="mainscreen_followers_text">followers</string>
+    <string name="mainscreen_following_text">following</string>
+    <string name="mainscreen_pinned_text">Pinned</string>
+    <string name="mainscreen_viewall_text">View all</string>
+    <string name="top_repos_title">Top repositories</string>
+    <string name="starred_repos_title">Starred Repositories</string>
+    <string name="error_inlayout_message">Could not fetch data. Please try again.</string>
+    <string name="retry_button_text">Retry</string>
+
+    <string name="error_generic">"Oops could not fetch data, please try again…"</string>
+    <string name="error_on_empty_response">"Server returned empty response. Please try again."</string>
+
+    <string name="content_description_avatar">Avatar of user</string>
+</resources>

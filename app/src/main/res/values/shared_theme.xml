@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ScreenTitleTextAppearance">
+        <item name="android:fontFamily">@font/sourcesanspro_bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="RepositoryGroupNamedHeaderTextAppearance">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineHeight">32sp</item>
+        <item name="android:fontFamily">@font/sourcesanspro_bold</item>
+    </style>
+
+    <style name="RepositoryGroupViewAllTextAppearance">
+        <item name="android:fontFamily">@font/sourcesanspro_bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="CardItemNormalText">
+        <item name="android:fontFamily">@font/sourcesanspro_regular</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="CardItemTitleText">
+        <item name="android:fontFamily">@font/sourcesanspro_semibold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="MainUserNameTitle">
+        <item name="android:fontFamily">@font/sourcesanspro_bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:lineHeight">40sp</item>
+    </style>
+</resources>
