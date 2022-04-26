@@ -2,19 +2,19 @@ This is an introduction to the code in the project to help you get familiar whil
 
 Please note that if your phone has adjusted text size in the accessability settings, then the design might not display as intended.
 
-- I used coroutines. Only needed to use it in the GithubGraphqlDataSource.kt to access the network. Coroutine scope is the one used from the MainActivity.
+- I used coroutines. Only needed to use them in the GithubGraphqlDataSource.kt to access the network. The coroutine scope used is the one from the MainActivity.
 - Used Android Studio version 2021.1.1 Patch 2
-- the duration to cache the response to 1 day is set in : com.edwardhuerta.networkmodule.data.datasource.GithubGraphqlDataSource#githubCacheDuration
-- If the user pulls to refresh, the cache in the client is cleared. (There is only one network call made)
-- The graphql query can be seen in the file GetUserData.graphql in the network module.
+- cache duration from the api is set to 1 day in : com.edwardhuerta.networkmodule.data.datasource.GithubGraphqlDataSource#githubCacheDuration
+- If the user pulls to refresh from the UI, the cache in the client is cleared. (There is only one network call made in all the app.)
+- The graphql query can be seen in the file GetUserData.graphql inside the network module.
 
-- Apollo library is used to generate client to connect to GitHub graphql endpoint.
+- The Apollo library is used to generate the network client that connects to the GitHub graphql endpoint.
 - Mockito is used to test the presenter logic (business logic) in the class com.edwardhuerta.githubchallenge.OverviewPresenterTest.
 - The View-Presenter contract is in com.edwardhuerta.githubchallenge.presentation.UserOverviewContract
 - There is a module that is of type 'com.android.library' containing the implementation of the network layer called 'networkmodule' in the base directory.
 - dagger app component is in com.edwardhuerta.githubchallenge.di.AppComponent
-- the github graphql model is mapped to a ui model com.edwardhuerta.githubchallenge.ui.model.MainScreenUiModel
-- mappings between network and ui models are contained in UiModelMappings.kt
+- the github graphql network model is mapped to a ui-model named com.edwardhuerta.githubchallenge.ui.model.MainScreenUiModel
+- mappings between network and ui models are contained in UiModelMappings.kt These mappings are tested thoroughly in the tests.
 
 Testing :
 
