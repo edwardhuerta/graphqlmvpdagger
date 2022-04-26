@@ -2,6 +2,8 @@ This is an introduction to the code in the project to help you get familiar whil
 
 Please note that if your phone has adjusted text size in the accessability settings, then the design might not display as intended.
 
+- I used coroutines. Only needed to use it in the GithubGraphqlDataSource.kt to access the network. Coroutine scope is the one used from the MainActivity.
+- Used Android Studio version 2021.1.1 Patch 2
 - the duration to cache the response to 1 day is set in : com.edwardhuerta.networkmodule.data.datasource.GithubGraphqlDataSource#githubCacheDuration
 - If the user pulls to refresh, the cache in the client is cleared. (There is only one network call made)
 - The graphql query can be seen in the file GetUserData.graphql in the network module.
