@@ -51,7 +51,6 @@ class GithubGraphqlDataSource @Inject constructor(
     // it is inside a coroutine, so it is OK to suppress
     @Suppress("BlockingMethodInNonBlockingContext")
     suspend fun fetchUserOverviewFromGithub(userLogin: String?, forceRefresh: Boolean?, networkStateCallback: NetworkStateCallback?) =
-        if (checkInternetConnection(context = appContext)) {
             try {
                 networkStateCallback?.newState(NetworkState.LOADING)
                 val result: GetUserDataQuery.Data? = withContext(Dispatchers.IO) {
@@ -68,19 +67,4 @@ class GithubGraphqlDataSource @Inject constructor(
             } catch (e: Exception) {
                 networkStateCallback?.newState(NetworkState.error("error while fetching useroverview", e))
             }
-        } else {
-            networkStateCallback?.newState(NetworkState.error("NO_INTERNET_ERROR"))
-        }
-
-    private fun checkInternetConnection(context: Context): Boolean {
-        val connectivityManager: ConnectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkCap = connectivityManager.activeNetwork ?: return false
-        val activeNetwork: NetworkCapabilities = connectivityManager.getNetworkCapabilities(networkCap) ?: return false
-        return when {
-            activeNetwork.hasTransport(TRANSPORT_WIFI) -> true
-            activeNetwork.hasTransport(TRANSPORT_CELLULAR) -> true
-            activeNetwork.hasTransport(TRANSPORT_ETHERNET) -> true
-            else -> false
-        }
-    }
 }

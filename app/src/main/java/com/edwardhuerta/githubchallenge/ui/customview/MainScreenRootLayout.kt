@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.request.CachePolicy
 import coil.transform.CircleCropTransformation
 import com.edwardhuerta.githubchallenge.R
 import com.edwardhuerta.githubchallenge.databinding.MainScreenLayoutBinding
@@ -82,6 +83,7 @@ class MainScreenRootLayout : FrameLayout, UserOverviewContract.View {
     private fun bindUi(uiModel : MainScreenUiModel) {
         this.binding?.apply {
             mainUserAvatar.load(uiModel.mainUserModel?.avatarUrl) {
+                diskCachePolicy(CachePolicy.ENABLED)
                 crossfade(true)
                 transformations(CircleCropTransformation())
             }

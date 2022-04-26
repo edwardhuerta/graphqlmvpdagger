@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.request.CachePolicy
 import coil.transform.CircleCropTransformation
 import com.edwardhuerta.githubchallenge.databinding.CardItemBinding
 import com.edwardhuerta.githubchallenge.ui.model.CardForUserItemUiModel
@@ -50,6 +51,7 @@ class ItemViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(item: CardForUserItemUiModel) {
         binding.cardItemAvatar.load(item.avatarUrl) {
+            diskCachePolicy(CachePolicy.ENABLED)
             crossfade(true)
             transformations(CircleCropTransformation())
         }
