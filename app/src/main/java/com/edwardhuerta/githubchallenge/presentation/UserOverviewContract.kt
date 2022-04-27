@@ -14,6 +14,7 @@ interface UserOverviewContract {
          */
         fun showUserOverviewData(uiModel: MainScreenUiModel)
         fun setPresenter(presenter : Presenter, coroutineScope: CoroutineScope)
+        fun resetLists()
     }
 
     interface Presenter {

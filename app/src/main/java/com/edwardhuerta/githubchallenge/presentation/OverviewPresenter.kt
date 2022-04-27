@@ -35,6 +35,9 @@ class OverviewPresenter @Inject constructor(
 
     override fun fetchData(forceRefresh : Boolean) {
         lifecycleScope?.launch {
+            if (forceRefresh) {
+                uiView?.resetLists()
+            }
             overviewRepository.fetchData(userLogin = fixedUserLoginToUse, forceRefresh = forceRefresh, networkStateCallback = handleNetworkStateCallback)
         }
     }

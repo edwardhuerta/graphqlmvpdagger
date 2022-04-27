@@ -135,6 +135,14 @@ class MainScreenRootLayout : FrameLayout, UserOverviewContract.View {
         this.coroutineScopeFromParent = coroutineScope
     }
 
+    override fun resetLists() {
+        this.binding?.apply {
+            (pinnedRecyclerview.adapter as RepoItemAdapter?)?.submitList(emptyList())
+            (topRepositoriesRecyclerview.adapter as RepoItemAdapter?)?.submitList(emptyList())
+            (starredRepositoriesRecyclerview.adapter as RepoItemAdapter?)?.submitList(emptyList())
+        }
+    }
+
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         presenter?.setView(this, coroutineScopeFromParent)
